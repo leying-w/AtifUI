@@ -8,22 +8,24 @@ import {MultiNumberValueTextField} from "../blocks/m_values";
 export function AtifInputDiameterUI(props: {
     diameterParameters: AtifDiameterParameters
     blockNumber: number
+    blockNumber1: number
+    blockNumber2: number
     onDiameterParametersChange: (parameter: AtifDiameterParameters) => Promise<void>
 }) {
     const newData = new AtifDiameterParameters(structuredClone(props.diameterParameters))
 
     return <Stack spacing={2}>
         <MultiNumberValueTextField
-            label={"diameter_block_number"}
+            label={"D_blocks"}
             error={props.diameterParameters.diameter_block_number.length != props.blockNumber}
-            helperText={`diameter_block_number should be equal to ${props.blockNumber}`}
+            helperText={`diameter for the monomer in each block! data format(e.g., 1,2,...,nb1,1,2,...,nb2): nb1 = ${props.blockNumber1} and nb2 = ${props.blockNumber2}`}
             onMValuesChange={async (mValues) => {
                 newData.diameter_block_number = mValues
                 await props.onDiameterParametersChange(newData)
             }}/>
 
         <TextField type={"number"}
-                   label={"positive_salt"}
+                   label={"D_positive_salt"}
                    value={props.diameterParameters.diameter_positive_salt}
                    onChange={async (event) => {
                        newData.diameter_positive_salt = doParseFloatValue(event.target.value, props.diameterParameters.diameter_positive_salt)
@@ -31,7 +33,7 @@ export function AtifInputDiameterUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"negative_salt"}
+                   label={"D_negative_salt"}
                    value={props.diameterParameters.diameter_negative_salt}
                    onChange={async (event) => {
                        newData.diameter_negative_salt = doParseFloatValue(event.target.value, props.diameterParameters.diameter_negative_salt)
@@ -39,7 +41,7 @@ export function AtifInputDiameterUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"positive_counterion"}
+                   label={"D_positive_counterions"}
                    value={props.diameterParameters.diameter_positive_counterion}
                    onChange={async (event) => {
                        newData.diameter_positive_counterion = doParseFloatValue(event.target.value, props.diameterParameters.diameter_positive_counterion)
@@ -47,7 +49,7 @@ export function AtifInputDiameterUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"negative_counterion"}
+                   label={"D_negative_counterions"}
                    value={props.diameterParameters.diameter_negative_counterion}
                    onChange={async (event) => {
                        newData.diameter_negative_counterion = doParseFloatValue(event.target.value, props.diameterParameters.diameter_positive_counterion)
@@ -55,7 +57,7 @@ export function AtifInputDiameterUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"hard_sphere_solvent"}
+                   label={"D_solvent"}
                    value={props.diameterParameters.diameter_solvent}
                    onChange={async (event) => {
                        newData.diameter_solvent = doParseFloatValue(event.target.value, props.diameterParameters.diameter_solvent)

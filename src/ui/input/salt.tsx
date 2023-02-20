@@ -12,7 +12,8 @@ export function AtifInputSaltUI(props: {
 
     return <Stack spacing={2}>
         <TextField type={"number"}
-                   label={"salt_concentration"}
+                   label={"salt concentration"}
+                   helperText={"e.g., 0.10M"}
                    value={props.saltParameters.salt_concentration}
                    onChange={async (event) => {
                        newData.salt_concentration = doParseFloatValue(event.target.value, props.saltParameters.salt_concentration)
@@ -20,7 +21,8 @@ export function AtifInputSaltUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"volume_fraction"}
+                   label={"total volume fraction"}
+                   helperText={"e.g., 0.74"}
                    value={props.saltParameters.volume_fraction}
                    onChange={async (event) => {
                        newData.volume_fraction = doParseFloatValue(event.target.value, props.saltParameters.volume_fraction)

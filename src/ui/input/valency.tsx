@@ -13,7 +13,7 @@ export function AtifInputValencyUI(props: {
 
     return <Stack spacing={2}>
         <TextField type={"number"}
-                   label={"salt_positive"}
+                   label={"z_positive_salt"}
                    value={props.valencyParameters.valency_salt_positive}
                    onChange={async (event) => {
                        newData.valency_salt_positive = doParseFloatValue(event.target.value, props.valencyParameters.valency_salt_positive)
@@ -21,7 +21,7 @@ export function AtifInputValencyUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"salt_negative"}
+                   label={"z_negative_salt"}
                    value={props.valencyParameters.valency_salt_negative}
                    onChange={async (event) => {
                        newData.valency_salt_negative = doParseFloatValue(event.target.value, props.valencyParameters.valency_salt_negative)
@@ -29,7 +29,7 @@ export function AtifInputValencyUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"counterion_positive"}
+                   label={"z_positive_counterions"}
                    value={props.valencyParameters.valency_counterion_positive}
                    onChange={async (event) => {
                        newData.valency_counterion_positive = doParseFloatValue(event.target.value, props.valencyParameters.valency_counterion_positive)
@@ -37,7 +37,7 @@ export function AtifInputValencyUI(props: {
                    }}/>
 
         <TextField type={"number"}
-                   label={"counterion_negative"}
+                   label={"z_negative_counterions"}
                    value={props.valencyParameters.valency_counterion_negative}
                    onChange={async (event) => {
                        newData.valency_counterion_negative = doParseFloatValue(event.target.value, props.valencyParameters.valency_counterion_negative)

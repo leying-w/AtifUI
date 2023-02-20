@@ -13,6 +13,7 @@ export function AtifInputSizeUI(props: {
     return <Stack spacing={2}>
         <TextField type={"number"}
                    label={"box size"}
+                   helperText={"e.g., L/d = 30"}
                    value={props.sizeParameters.box_size}
                    onChange={async (event) => {
                        newData.box_size = doParseFloatValue(event.target.value, props.sizeParameters.box_size)
@@ -21,6 +22,7 @@ export function AtifInputSizeUI(props: {
 
         <TextField type={"number"}
                    label={"step length"}
+                   helperText={"e.g., dz/d = 0.01"}
                    value={props.sizeParameters.step_length}
                    onChange={async (event) => {
                        newData.step_length = doParseFloatValue(event.target.value, props.sizeParameters.step_length)

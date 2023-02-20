@@ -11,12 +11,12 @@ export function AtifInputSequenceUI(props: {
 }) {
     const newData = new AtifSequenceParameters(structuredClone(props.sequenceParameters))
 
-    const errorMsg1 = `sequence number is wrong [should equal to blockNumber: ${props.blockNumber1}]`
-    const errorMsg2 = `sequence number is wrong [should equal to blockNumber: ${props.blockNumber2}]`
+    const errorMsg1 = `data format (e.g., 1,2,...,nb1), nb1 is block number: ${props.blockNumber1}`
+    const errorMsg2 = `data format (e.g., 1,2,...,nb2), nb2 is block number: ${props.blockNumber2}`
 
     return <Stack spacing={2}>
         <MultiNumberValueTextField
-            label={"block_monomer_number1"}
+            label={"monomer_number_in_block_P1"}
             helperText={errorMsg1}
             error={props.sequenceParameters.block_monomer_number1.length != props.blockNumber1}
             onMValuesChange={async (values) => {
@@ -25,7 +25,7 @@ export function AtifInputSequenceUI(props: {
             }}/>
 
         <MultiNumberValueTextField
-            label={"block_monomer_number2"}
+            label={"monomer_number_in_block_P2"}
             helperText={errorMsg2}
             error={props.sequenceParameters.block_monomer_number2.length != props.blockNumber2}
             onMValuesChange={async (values) => {
@@ -34,7 +34,7 @@ export function AtifInputSequenceUI(props: {
             }}/>
 
         <MultiNumberValueTextField
-            label={"block_valency1"}
+            label={"monomer_valency_in_block_P1"}
             helperText={errorMsg1}
             error={props.sequenceParameters.block_valency1.length != props.blockNumber1}
             onMValuesChange={async (values) => {
@@ -43,7 +43,7 @@ export function AtifInputSequenceUI(props: {
             }}/>
 
         <MultiNumberValueTextField
-            label={"block_valency2"}
+            label={"monomer_valency_in_block_P2"}
             helperText={errorMsg2}
             error={props.sequenceParameters.block_valency2.length != props.blockNumber2}
             onMValuesChange={async (values) => {
