@@ -29,7 +29,7 @@ function AtifInputPolymerDataUI(props: {
             }} />
 
         <TextField type={"number"}
-            label={"block_number"}
+            label={"block number"}
             helperText={"sequence structure of polymer"}
             value={props.polymerData.block_number}
             onChange={async (event) => {

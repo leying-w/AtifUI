@@ -34,7 +34,7 @@ export function AtifInputMethodUI(props: AtifInputMethodUIProps) {
                 return <TextField {...args}
                                   value={props.methodParameters.geometry}
                                   label={"geometry of surface"}
-                                  helperText={"e.g.,Planar/Spherical"}
+                                  helperText={"e.g.,Planar/Spherical/Cylindrical"}
                                   onChange={async (event) => {
                                       newMethodParameters.geometry = event.target.value
                                       await props.onMethodParameterChange(newMethodParameters)
@@ -78,7 +78,7 @@ export function AtifInputMethodUI(props: AtifInputMethodUIProps) {
         <TextField
             type={"number"}
             value={props.methodParameters.charge_shell_model[0].toString()}
-            label={"charge shell model: A"}
+            label={"charge shell model A"}
             helperText={"A&B: parameters in charge shell model (0<=B<=A<=1)"}
             onChange={async (event) => {
                 const value = doParseFloatValue(event.target.value, newMethodParameters.charge_shell_model[0])
@@ -90,7 +90,7 @@ export function AtifInputMethodUI(props: AtifInputMethodUIProps) {
         <TextField
             type={"number"}
             value={props.methodParameters.charge_shell_model[1].toString()}
-            label={"charge shell model: B"}
+            label={"charge shell model B"}
             helperText={"A&B: parameters in charge shell model (0<=B<=A<=1)"}
             onChange={async (event) => {
                 const value = doParseFloatValue(event.target.value, newMethodParameters.charge_shell_model[1])
